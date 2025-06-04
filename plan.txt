@@ -1,1 +1,11 @@
-step 1:
+Features:
+User scans or searches the product
+App retreives description and details, supply chain nfo
+AI mdoel predicts enviromental impact score
+Display breakdown and suggestions for alt chouse
+data storace for product scores
+
+Define inputs
+description
+Manufacturwer
+supply chain info
