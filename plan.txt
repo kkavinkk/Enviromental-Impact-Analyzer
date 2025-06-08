@@ -8,4 +8,4 @@ data storace for product scores
 Define inputs
 description
 Manufacturwer
-supply chain info and further analysis
+supply chain info and further analysismvklsdmklvm
