@@ -10,3 +10,5 @@ description
 Manufacturwer
 supply chain info and further analysis
 React the app and reeact
+
+adf the nexuys
