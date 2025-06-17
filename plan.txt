@@ -12,3 +12,63 @@ supply chain info and further analysis
 React the app and reeact
 
 mongoDB,  react etc
+
+Environmental-Impact-Analyzer/
+├── client/                    # React Frontend
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/          # API calls to backend
+│   │   ├── App.jsx
+│   │   └── index.js
+│   ├── .env
+│   ├── package.json
+│   └── vite.config.js
+│
+├── server/                    # Node.js Backend
+│   ├── src/
+│   │   ├── controllers/       # API logic
+│   │   ├── models/            # Mongoose schemas
+│   │   ├── routes/            # Express routes
+│   │   ├── services/          # Calls to AI models, APIs, data parsers
+│   │   ├── utils/             # Helper functions (validation, data cleaning)
+│   │   └── server.js
+│   ├── .env
+│   ├── package.json
+│   └── Dockerfile
+│
+├── ai-models/                 # AI/ML Code (PyTorch + Hugging Face)
+│   ├── product_ner/           # NER model for product descriptions
+│   │   ├── train.py
+│   │   ├── infer.py
+│   │   ├── model/
+│   │   └── config.json
+│   │
+│   ├── impact_predictor/      # Regression model for environmental impact
+│   │   ├── train.py
+│   │   ├── predict.py
+│   │   ├── model/
+│   │   └── config.json
+│   │
+│   └── requirements.txt       # Python dependencies
+│
+├── data-sourcing/             # Data ingestion + processing scripts
+│   ├── scraping/
+│   │   ├── scrape_products.py
+│   │   └── scrape_emission_factors.py
+│   ├── data_cleaning/
+│   │   ├── clean_product_data.py
+│   │   └── merge_datasets.py
+│   └── datasets/
+│       └── raw/
+│       └── processed/
+│
+├── database/                  # MongoDB connection config + seeders
+│   ├── connection.js
+│   └── seed_data.js
+│
+├── docker-compose.yml         # Service orchestration
+├── README.md
+└── .gitignore
