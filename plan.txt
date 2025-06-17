@@ -11,4 +11,4 @@ Manufacturwer
 supply chain info and further analysis
 React the app and reeact
 
-mongoDB
+mongoDB,  react etc
