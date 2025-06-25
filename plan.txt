@@ -14,7 +14,7 @@ React the app and reeact
 mongoDB,  react etc why is jsx
 
 Environmental-Impact-Analyzer/
-├── client/                    # React Frontend
+├── client/                    # React Frontends
 │   ├── public/
 │   ├── src/
 │   │   ├── assets/
