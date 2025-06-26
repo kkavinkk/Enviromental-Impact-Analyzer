@@ -11,7 +11,7 @@ Manufacturer
 supply chain info and further analysis
 React the app and reeact
 
-mongoDB,  react etc why is jsx
+mongoDB,  react etc 
 
 Environmental-Impact-Analyzer/
 ├── client/                    # React Frontends
