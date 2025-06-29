@@ -11,8 +11,7 @@ Manufacturer
 supply chain info and further analysis
 React the app and reeact
 
-mongoDB,  react etc 
-
+mongoDB,  re
 Environmental-Impact-Analyzer/
 ├── client/                    # React Frontends
 │   ├── public/
