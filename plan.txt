@@ -15,7 +15,7 @@ mongoDB,
 Environmental-Impact-Analyzer/
 ├── client/                    # React Frontends
 │   ├── public/
-│   ├── src/
+│   ├── src/d
 │   │   ├── assets/
 │   │   ├── components/
 │   │   ├── pages/
