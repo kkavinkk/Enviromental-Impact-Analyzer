@@ -66,7 +66,7 @@ Environmental-Impact-Analyzer/
 │
 ├── database/                  # MongoDB connection config + seeders
 │   ├── connection.js
-│   └── seed_data.js
+│   └── seed_data.jsx
 │
 ├── docker-compose.yml         # Service orchestration
 ├── README.md
