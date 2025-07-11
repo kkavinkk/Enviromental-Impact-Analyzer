@@ -47,7 +47,7 @@ Environmental-Impact-Analyzer/
 │   │
 │   ├── impact_predictor/      # Regression model for environmental impact
 │   │   ├── train.py
-│   │   ├── predict.pysssss
+│   │   ├── predict.py
 │   │   ├── model/
 │   │   └── config.json
 │   │
