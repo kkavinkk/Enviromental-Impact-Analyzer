@@ -10,8 +10,8 @@ function App() {
 
   return (
     <>
-      <div className='find_findmoremore'>
-
+      <div className='find_finde'>
+        <button></button>
       </div>
     </>
   )
