@@ -4,19 +4,38 @@ import viteLogo from '/vite.svg'
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  let x = 1;
-
+  //Carbon Footprint, Water footprint, Energy consumption, resopurce depletion
   return (
-    <>
-      <div className='find_finde'>
-        <button>
-          <p><div>
-            </div></p>
-        </button>
-      </div>
-    </>
+    <div>
+      <p>
+        Carbon Emissions Footprint
+      </p>
+      <form>
+        <input name="query" />
+        <button type="submit">Search</button>
+      </form>
+      <p>
+        Water Consumption
+      </p>
+      <form>
+        <input name="query" />
+        <button type="submit">Search</button>
+      </form>
+      <p>
+        Carbon Emissions Footprint
+      </p>
+      <form>
+        <input name="query" />
+        <button type="submit">Search</button>
+      </form>
+      <p>
+        Carbon Emissions Footprint
+      </p>
+      <form>
+        <input name="query" />
+        <button type="submit">Search</button>
+      </form>
+    </div>
   )
 }
 
