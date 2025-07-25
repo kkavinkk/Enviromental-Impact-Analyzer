@@ -24,4 +24,30 @@ function Calculator() {
     });
 
     const [score, setScore] = useState(null);
+
+    const normalize = (value, min, max) => {
+        const v = parseFloat(value);
+        return Math.max(0, Math.min(1, 1 - (v - min) / (max - min)));
+    };
+
+    const handleChange = (e) => {
+        setInputs({ ...inputs, [e.target.name]: e.target.value });
+    };
+
+    const calculate = (e) => {
+        e.preventDefault();
+
+        const carbonScore = normalize(inputs.carbon, ranges.carbon.min, ranges.carbon.max);
+        const waterScore = normalize(inputs.water, ranges.water.min, ranges.water.max);
+        const energyScore = normalize(inputs.energy, ranges.energy.min, ranges.energy.max);
+        const resourceScore = normalize(inputs.resource, ranges.resource.min, ranges.resource.max);
+
+        const total = 
+            carbonScore * weights.carbon +
+            waterScore * weights.water +
+            energyScore * weights.energy +
+            resourceScore * weights.resource;
+
+        setScore((total * 100).toFixed(2))
+    };
 };
