@@ -48,6 +48,6 @@ function Calculator() {
             energyScore * weights.energy +
             resourceScore * weights.resource;
 
-        setScore((total * 100).toFixed(2))
+        setScore((total * 100).toFixed(2))sss
     };
 };
