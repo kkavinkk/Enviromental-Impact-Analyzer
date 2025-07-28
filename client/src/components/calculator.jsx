@@ -56,7 +56,41 @@ return (
     <div style={{ padding: '1rem', maxWidth: '400px', margin: 'auto' }}>
         <h2>Enviromental  Im,pact Analyzer</h2>
         <form onSubmit={calculate}>
-            <label htmlFor=""></label>
+            <label>
+                Carbon Footprint  (kg CO₂e):
+                <input name="carbon" type="number" step="any" value={inputs.carbon} onChange={handleChange} required />
+            </label>
+            </form>
+            <br />
+            <form onSubmit={calculate}>
+                <label>
+                    Water Consumption (L):
+                    <input name="water" type="number" step="any" value={inputs.water} onChange={handleChange} required />
+                </label>
+            </form>
+            <br />
+            <form onSubmit={calculate}>
+                <label>
+                    Energy Consumption (MJ):
+                    <input name="energy" type="number" step="any" value={inputs.energy} onChange={handleChange} required />
+                </label>
+            </form>
+            <br />
+            <form onSubmit={calculate}>
+                <label>
+                    Resource Depletion (kg Sb eq):
+                    <input name="resource" type="number" step="any" value={inputs.resource} onChange={handleChange} required />
+                </label>
+            <br />
+            <button type='submit' style={{ marginTop: '1rem' }}>Calculate Score</button>
         </form>
+
+        {score && (
+            <div style={{ marginTop: '1rem' }}>
+                <h3>Environmental Score: {score} / 100</h3>
+            </div> 
+        )}
     </div>
 )
+
+export default Calculator
