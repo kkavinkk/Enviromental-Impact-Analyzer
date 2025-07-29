@@ -50,7 +50,7 @@ function Calculator() {
 
         setScore((total * 100).toFixed(2))
     };
-};
+
 
 return (
     <div style={{ padding: '1rem', maxWidth: '400px', margin: 'auto' }}>
@@ -91,6 +91,7 @@ return (
             </div> 
         )}
     </div>
-)
+    );
+};
 
 export default Calculator
