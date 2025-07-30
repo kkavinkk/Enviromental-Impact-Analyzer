@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Calculator from '.    \calculator.jsx';
+import Calculator from '.\Calculator.jsx';
 
 
 function App() {
