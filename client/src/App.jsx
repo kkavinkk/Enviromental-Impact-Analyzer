@@ -5,7 +5,7 @@ import Calculator from '.\Calculator.jsx';
 function App() {
   return (
     <div>
-      <Calculator />
+      <Calculatorsss />
     </div>
   )
 }
