@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import Calculator from '.\Calculator.jsx';
+import Calculator from './components/calculator';
 
 
 function App() {
   return (
     <div>
-      <Calculatorsss />
+      <Calculator />
     </div>
   )
 }
