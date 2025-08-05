@@ -8,7 +8,7 @@ function App() {
       <Calculator />
     </div>
   )
-  //SFDSFFDSFSDDFDDDDDDDDDDD
+  
 }
 
 export default App
