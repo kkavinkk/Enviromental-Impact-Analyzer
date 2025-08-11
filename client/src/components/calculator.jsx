@@ -88,10 +88,7 @@ return (
         {score && (
             <div style={{ marginTop: '1rem' }}>
                 <h3>Environmental Score: {score} / 100</h3>
-            </div>
-            <div>
-                <h3>Environmental Score: {score} / 100</h3>
-            </div>  
+            </div> 
         )}
     </div>
     );
