@@ -89,7 +89,7 @@ return (
             <div style={{ marginTop: '1rem' }}>
                 <h3>Environmental Score: {score} / 100</h3>
             </div> 
-            //lebron lebron lebrooon james
+       
         )}
     </div>
     );
