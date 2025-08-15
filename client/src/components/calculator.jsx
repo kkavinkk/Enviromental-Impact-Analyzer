@@ -87,6 +87,13 @@ return (
 
         {score && (
             <div style={{ marginTop: '1rem' }}>
+                <h3>Entered Metrics:</h3>
+                <ul>
+                    <li>Carbon Footprint: {inputs.carbon || 0} kg CO₂</li>
+                    <li>Water Footprint: {inputs.water || 0} L</li>
+                    <li>Energy Consumption: {inputs.energy || 0} kWh</li>
+                    <li>Resource Depletion: {inputs.resource || 0} kg</li>
+                </ul>
                 <h3>Environmental Score: {score} / 100</h3>
             </div> 
        
