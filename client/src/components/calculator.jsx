@@ -95,6 +95,7 @@ return (
                     <li>Resource Depletion: {inputs.resource || 0} kg</li>
                 </ul>
                 <h3>Environmental Score: {score} / 100</h3>
+                {/* identify how to get and clean data */}
             </div> 
        
         )}
