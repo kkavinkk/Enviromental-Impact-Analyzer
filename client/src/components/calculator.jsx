@@ -54,7 +54,7 @@ function Calculator() {
 
 return (
     <div style={{ padding: '1rem', maxWidth: '400px', margin: 'auto' }}>
-        <h2>Enviromental  Im,pact Analyzer</h2>
+        <h2>Enviromental  Impact Analyzer</h2>
         <form onSubmit={calculate}>
             <label>
                 Carbon Footprint  (kg CO₂e):
