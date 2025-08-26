@@ -35,7 +35,7 @@ Environmental-Impact-Analyzer/
 │   │   ├── utils/             # Helper functions (validation, data cleaning)
 │   │   └── server.js
 │   ├── .env
-│   ├── package.jsonss
+│   ├── package.jsons
 │   └── Dockerfile
 │
 ├── ai-models/                 # AI/ML Code (PyTorch + Hugging Face)
