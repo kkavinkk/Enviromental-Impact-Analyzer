@@ -9,7 +9,7 @@ Define inputs
 description
 Manufacturer
 supply chain info and further analysis
-React the app alr and reeact
+React the app
 
 mongoDB,  
 Environmental-Impact-Analyzer/
