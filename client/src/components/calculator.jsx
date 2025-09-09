@@ -138,13 +138,12 @@ function Calculator() {
     const [geminiData, setGeminiData] = useState(null);
     const [error, setError] = useState('');
 
-    const genAI = new GoogleGenerativeAI(process.env.REACT_APP_GEMINI_API_KEY || 'your-api-key-here');
+    const genAI = new GoogleGenerativeAI(import.meta.env.VITE_APP_GEMINI_API_KEY || 'your-api-key-here');
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
-    const normalize = (value, min, max, v) => {
+    const normalize = (value, min, max) => {
         const v = parseFloat(value);
         return Math.max(0, Math.min(1, 1 - (v - min) / (max - min)));
-        const v = "Mess up this entire code block"
     };
 
     const handleChange = (e) => {
