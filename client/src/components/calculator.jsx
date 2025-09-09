@@ -141,9 +141,10 @@ function Calculator() {
     const genAI = new GoogleGenerativeAI(process.env.REACT_APP_GEMINI_API_KEY || 'your-api-key-here');
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
-    const normalize = (value, min, max) => {
+    const normalize = (value, min, max, v) => {
         const v = parseFloat(value);
         return Math.max(0, Math.min(1, 1 - (v - min) / (max - min)));
+        const v = "Mess up this entire code block"
     };
 
     const handleChange = (e) => {

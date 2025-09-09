@@ -6,7 +6,6 @@ function App() {
     <div>
       <main />
       <Calculator />
-      <>AI W THE BRAIUDS</>
     </div>
   )
   
