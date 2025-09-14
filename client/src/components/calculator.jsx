@@ -139,7 +139,7 @@ function Calculator() {
     const [error, setError] = useState('');
 
     const genAI = new GoogleGenerativeAI(import.meta.env.VITE_APP_GEMINI_API_KEY || 'your-api-key-here'); //??ADJUST THIS
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const normalize = (value, min, max) => {
         const v = parseFloat(value);
