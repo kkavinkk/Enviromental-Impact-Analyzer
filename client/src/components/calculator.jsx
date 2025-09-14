@@ -1,111 +1,3 @@
-// import { useState } from 'react';
-
-// // Normalized moin max range
-// const ranges = {
-//   carbon: { min: 30, max: 124 },        // kg CO2e
-//   water: { min: 500, max: 10000 },      // Liters
-//   energy: { min: 100, max: 2000 },      // MJ
-//   resource: { min: 0.002, max: 0.02 }   // kg Sb eq
-// }
-
-// const weights = {
-//     carbon: 0.4,
-//     water: 0.25,
-//     energy: 0.2,
-//     resource: 0.15
-// }
-
-// function Calculator() {
-//     const [inputs, setInputs] = useState({
-//         carbon: '',
-//         water: '',
-//         energy: '',
-//         resource: ''
-//     });
-
-//     const [score, setScore] = useState(null);
-
-//     const normalize = (value, min, max) => {
-//         const v = parseFloat(value);
-//         return Math.max(0, Math.min(1, 1 - (v - min) / (max - min)));
-//     };
-
-//     const handleChange = (e) => {
-//         setInputs({ ...inputs, [e.target.name]: e.target.value });
-//     };
-
-//     const calculate = (e) => {
-//         e.preventDefault();
-
-//         const carbonScore = normalize(inputs.carbon, ranges.carbon.min, ranges.carbon.max);
-//         const waterScore = normalize(inputs.water, ranges.water.min, ranges.water.max);
-//         const energyScore = normalize(inputs.energy, ranges.energy.min, ranges.energy.max);
-//         const resourceScore = normalize(inputs.resource, ranges.resource.min, ranges.resource.max);
-
-//         const total = 
-//             carbonScore * weights.carbon +
-//             waterScore * weights.water +
-//             energyScore * weights.energy +
-//             resourceScore * weights.resource;
-
-//         setScore((total * 100).toFixed(2))
-//     };
-
-
-// return (
-//     <div style={{ padding: '1rem', maxWidth: '400px', margin: 'auto' }}>
-//         <h2>Enviromental  Impact Analyzer</h2>
-//         <form onSubmit={calculate}>
-//             <label>
-//                 Carbon Footprint  (kg CO₂e):
-//                 <input name="carbon" type="number" step="any" value={inputs.carbon} onChange={handleChange} required />
-//             </label>
-//             </form>
-//             <br />
-//             <form onSubmit={calculate}>
-//                 <label>
-//                     Water Consumption (L):
-//                     <input name="water" type="number" step="any" value={inputs.water} onChange={handleChange} required />
-//                 </label>
-//             </form>
-//             <br />
-//             <form onSubmit={calculate}>
-//                 <label>
-//                     Energy Consumption (MJ):
-//                     <input name="energy" type="number" step="any" value={inputs.energy} onChange={handleChange} required />
-//                 </label>
-//             </form>
-//             <br />
-//             <form onSubmit={calculate}>
-//                 <label>
-//                     Resource Depletion (kg Sb eq):
-//                     <input name="resource" type="number" step="any" value={inputs.resource} onChange={handleChange} required />
-//                 </label>
-//             <br />
-//             <button type='submit' style={{ marginTop: '1rem' }}>Calculate Score</button>
-//         </form>
-
-//         {score && (
-//             <div style={{ marginTop: '1rem' }}>
-//                 <h3>Entered Metrics:</h3>
-//                 <ul>
-//                     <li>Carbon Footprint: {inputs.carbon || 0} kg CO₂</li>
-//                     <li>Water Footprint: {inputs.water || 0} L</li>
-//                     <li>Energy Consumption: {inputs.energy || 0} kWh</li>
-//                     <li>Resource Depletion: {inputs.resource || 0} kg</li>
-//                 </ul>
-//                 <h3>Environmental Score: {score} / 100</h3>
-//                 {/* identify howfbvbv bvk jndvbndto get and clean data */}
-//             </div> 
-       
-//         )}
-//     </div>
-//     );
-// };
-
-// export default Calculator
-
-
 import { useState } from 'react';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
@@ -158,45 +50,31 @@ function Calculator() {
 
         setLoading(true);
         setError('');
-        
-        try {
-            const prompt = `
-                Provide environmental impact data for: "${productQuery}"
-                
-                Please return ONLY a JSON object with the following structure (no other text):
-                {
-                    "carbon": [number in kg CO2e],
-                    "water": [number in liters], 
-                    "energy": [number in MJ],
-                    "resource": [number in kg Sb eq],
-                    "description": "[brief description of the product/service]",
-                    "assumptions": "[key assumptions made in the calculation]"
-                }
-                
-                Use realistic estimates based on lifecycle assessment data. If exact data isn't available, provide reasonable estimates with clear assumptions.
-            `;
 
-            const result = await model.generateContent(prompt);
-            const response = await result.response;
-            const text = response.text();
-            
-            // Try to extract JSON from the response
-            const jsonMatch = text.match(/\{[\s\S]*\}/);
-            if (jsonMatch) {
-                const data = JSON.parse(jsonMatch[0]);
-                setGeminiData(data);
-                
-                // Auto-populate the form with Gemini data
-                setInputs({
-                    carbon: data.carbon?.toString() || '',
-                    water: data.water?.toString() || '',
-                    energy: data.energy?.toString() || '',
-                    resource: data.resource?.toString() || ''
-                });
-            } else {
-                throw new Error('Could not parse environmental data from response');
+        try {
+            const response = await fetch('http://localhost:3001/api/analyze', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ productQuery }),
+            });
+
+            if (!response.ok) {
+                throw new Error('Server response was not ok');
             }
-            
+
+            const data = await response.json();
+            setGeminiData(data);
+
+            // Auto-populate the form with Gemini data
+            setInputs({
+                carbon: data.carbon?.toString() || '',
+                water: data.water?.toString() || '',
+                energy: data.energy?.toString() || '',
+                resource: data.resource?.toString() || ''
+            });
+
         } catch (error) {
             console.error('Error fetching data:', error);
             setError('Error fetching environmental data: ' + error.message);
