@@ -1,3 +1,4 @@
+Hellow peter welcome to fortnight
 Features:
 User scans or searches the product
 App retreives description and details, supply chain nfo
