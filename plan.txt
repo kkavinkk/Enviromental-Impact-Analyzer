@@ -1,10 +1,9 @@
-Hellow peter welcome to 
 Features:
 User scans or searches the product
 App retreives description and details, supply chain nfo
 AI mdoel predicts enviromental impact score
 Display breakdown and suggestions for alt chouse
-data storace for product scores
+data storace for product scores // ensure u store correctly in sql or non sql
 
 Define inputs
 description
