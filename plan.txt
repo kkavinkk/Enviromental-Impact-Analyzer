@@ -8,7 +8,7 @@ data storace for product scores // ensure u store correctly in sql or non sql
 Define inputs
 description
 Manufacturer
-supply chain info and further analysis
+supply chain info and further analysis maybe take this out
 React the app
 
 mongoDB,  
