@@ -5,7 +5,7 @@ AI mdoel predicts enviromental impact score
 Display breakdown and suggestions for alt 
 data storace for product scores // ensure u store correctly in sql or non sql
 
-
+java jav s ajvsjs avsj a
 description
 
 React the app
