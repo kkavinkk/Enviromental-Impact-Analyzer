@@ -7,7 +7,7 @@ data storace for product scores // ensure u store correctly in sql or non sql
 
 java jav s ajvsjs avsj a
 description
-ww
+
 React the app
 
 mongoDB,  
