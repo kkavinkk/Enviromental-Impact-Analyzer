@@ -4,12 +4,14 @@ import bodyParser from 'body-parser';
 import sqlite3 from 'sqlite3'
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import 'dotenv/config';
+import { open } from 'sqlite';
 
 const app = express();
 const port = 3001; // Choose a different port from your Vite app (e.g., 3001)
 
 // Middleware
 app.use(cors());
+app.use(bodyParser.json());
 app.use(express.json());
 
 // Initialize Gemini with the API key from .env file
@@ -56,6 +58,29 @@ app.post('/api/analyze', async (req, res) => {
         res.status(500).json({ error: 'Failed to fetch environmental data.' });
     }
 });
+
+// Open SQLite DB
+let db;
+(async () => {
+    db = await open({
+        filename: "./results.db",
+        driver: sqlite3.Database
+    });
+    await db.exec(`
+    CREATE TABLE IF NOT EXISTS results (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      productName TEXT,
+      carbon REAL,
+      water REAL,
+      energy REAL,
+      resource REAL,
+      score REAL,
+      createdAt TEXT
+    )
+  `);
+})();
+
+//continure from here
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
